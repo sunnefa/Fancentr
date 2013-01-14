@@ -1,0 +1,19 @@
+<h1>Register</h1>
+<p>Use the form below to register with Fancentr.org. Please make sure you read our <a href="privacy">Privacy policy</a> and <a href="tos">Terms of use</a> first.</p>
+
+<p>{REG_ERROR}</p>
+
+<form action="index.php" method="post">
+    <input type="hidden" name="module" value="users" />
+    <input type="hidden" name="part" value="add_user" />
+    <p><label for="username">Username</label>
+    <input type="text" name="user_data[username]" value="{USERNAME}" id="username" /></p>
+    <p><label for="email_address">Email address</label>
+    <input type="email" name="user_data[email_address]" value="{EMAIL_ADDRESS}" id="email_address" /></p>
+    <p><label for="password">Password</label>
+    <input type="password" name="user_data[password]" value="{PASSWORD}" id="password" /></p>
+    <p><label for="display_name">Display name</label>
+    <input type="text" name="user_data[display_name]" value="{DISPLAY_NAME}" id="display_name" />
+
+    <p><input type="submit" name="sumbit" value="Register" /></p>
+</form>

@@ -1,0 +1,15 @@
+<h1>Sending message</h1>
+<p>You are sending a message to {RECIPIENT_NAME}</p>
+<form action="index.php" method="post">
+    <input type="hidden" name="module" value="messages" />
+    <input type="hidden" name="part" value="send" />
+    <input type="hidden" name="recipient" value="{RECIPIENT_ID}" />
+    <input type="hidden" name="sender" value="{USER_ID}" />
+    <input type="hidden" name="parent" value="{PARENT_ID}" />
+    <input type="hidden" name="replying_to" value="{REPLYING_TO}" />
+    <p>Title: <input type="text" value="{TITLE}" name="title" /></p>
+    <p>Message</p>
+    <p><textarea cols="30" rows="10" name="message">{OLD_MESSAGE}</textarea></p>
+    <p><input type="submit" name="submit" value="Send message" /></p>
+</form>
+<p><a href="messages">Back to messages</a></p>

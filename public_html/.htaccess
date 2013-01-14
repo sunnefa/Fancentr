@@ -1,0 +1,39 @@
+# .htaccess file for Fancentr.org
+
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !([a-z0-9A-Z]+)/$
+RewriteRule ^([a-z0-9A-Z]+)$ $1/ [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#home page rules
+RewriteRule ^([a-z0-9A-Z]+)/$ index.php?page=$1
+RewriteRule ^$ index.php?page=home [L]
+#
+#Site rules
+RewriteRule ^sites/([a-z]+)$ index.php?page=sites&part=$1
+RewriteRule ^sites/([a-z]+)/(0-9+)$ index.php?page=sites&part=$1&id=$2
+RewriteRule ^sites/list/(alphabetic|newest|popular)/(asc|desc)$ index.php?page=sites&part=list&order=$1&direction=$2
+RewriteRule ^sites/list/(alphabetic|newest|popular)$ index.php?page=sites&part=list&order=$1
+RewriteRule ^sites/visit/([0-9]+)$ index.php?page=sites&part=visit&site_id=$1
+#
+#User rules
+RewriteRule ^users/([a-z]+)$ index.php?page=users&part=$1
+RewriteRule ^users/profile/([a-zA-Z0-9]+)$ index.php?page=users&part=profile&user=$1
+#
+#RSS rules
+RewriteRule ^rss/([a-z]+)$ index.php?page=rss&part=$1
+RewriteRule ^rss/single/([0-9]+)$ index.php?page=rss&part=single&feed_id=$1
+RewriteRule ^rss/delete/([0-9]+)$ index.php?page=rss&part=delete&feed_id=$1
+RewriteRule ^rss/edit/([0-9]+)$ index.php?page=rss&part=edit&feed_id=$1
+#
+#Messages rules
+RewriteRule ^messages/([a-z]+)$ index.php?page=messages&part=$1
+RewriteRule ^messages/list/(sent|received)$ index.php?page=messages&part=list&type=$1
+RewriteRule ^messages/single/([0-9]+)$ index.php?page=messages&part=single&message_id=$1
+RewriteRule ^messages/send/([0-9]+)$ index.php?page=messages&part=send&user_id=$1
+RewriteRule ^messages/send/([0-9]+)/([0-9]+)$ index.php?page=messages&part=send&user_id=$1&message_id=$2
+RewriteRule ^messages/delete/([0-9]+)$ index.php?page=messages&part=delete&message_id=$1

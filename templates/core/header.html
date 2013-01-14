@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <base href="http://localhost/" />
+        <title>Fancentr.org - {PAGE_TITLE}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="description" content="{PAGE_META}" />
+        <meta name="keywords" content="fansites, fan site, fansite, fan sites, celebrities, social network, celeb" />
+        <meta name="robots" content="index, follow" />
+        
+        <link rel="stylesheet" href="css/style.css" />
+        <link href="js/scrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+        
+        <!--<script type="text/javascript" src="js/jquery.js"></script>-->
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+        <script src="js/scrollbar/jquery.mousewheel.min.js"></script>
+        <script src="js/scrollbar/jquery.mCustomScrollbar.js"></script>
+        
+        <script type="text/javascript" src="js/sites.js"></script>
+        
+        <script>
+            (function($){
+                $(document).ready(function(){
+                    $("#middle").mCustomScrollbar({
+                     set_width:false, 
+                    set_height:false, 
+                    horizontalScroll:false, 
+                    scrollInertia:0, 
+                    scrollEasing:"easeOutCirc", 
+                    mouseWheel:"auto", 
+                    autoDraggerLength:true   
+                    });
+                });
+            })(jQuery);
+            
+            (function($){
+                $(document).ready(function(){
+                    $(".feed_sites_list").mCustomScrollbar({
+                     set_width:false, 
+                    set_height:false, 
+                    horizontalScroll:false, 
+                    scrollInertia:0, 
+                    scrollEasing:"easeOutCirc", 
+                    mouseWheel:"auto", 
+                    autoDraggerLength:true   
+                    });
+                });
+            })(jQuery);
+        </script>
+        
+    </head>
+    <body>
+        <header>
+            <div id="login">
+                {LOGGED_IN}
+            </div>
+            
+            <div id="messages">
+                {MESSAGES}
+            </div>
+            
+            <div id="logo">
+                <!-- TODO: Make sure this points to fancentr.org when I deploy the site !-->
+                <a href="http://localhost/">&nbsp;</a>
+            </div>
+        </header>

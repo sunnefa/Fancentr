@@ -1,0 +1,15 @@
+<h1>Contact us</h1>
+<p>Use the form below to contact us</p>
+<p>{LOGGED_IN_MESSAGE}</p>
+<p>{ERRORS}</p>
+<form action="index.php" method="post">
+    <input type="hidden" name="module" value="contact" />
+    <input type="hidden" name="part" value="contact" />
+    <input type="hidden" name="username" value="{USER_NAME}" />
+    <p>Subject: <input type="text" name="text[subject]" value="{SUBJECT}" /></p>
+    <p class="{EMAIL_CLASS}">Email address: <input type="{EMAIL_TYPE}" name="email_address" value="{EMAIL_ADDRESS}" /></p>
+    <p>Message:</p>
+    <p><textarea cols="50" rows="10" name="text[message]">{MESSAGE}</textarea></p>
+    <p><input type="submit" name="submit" value="Send" /></p>
+</form>
+<p>{SENT_MESSAGE}</p>

@@ -1,0 +1,17 @@
+<div style="float:right; width:45%">
+    <h2>Update your profile</h2>
+    {EDIT_ERRORS}
+    <form action="index.php" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="module" value="users" />
+        <input type="hidden" name="part" value="edit_profile" />
+        <input type="hidden" name="userid" value="{USERID}" />
+        <input type="hidden" name="username" value="{USERNAME}" />
+        <p>Display name: <input type="text" name="user[display_name]" value="{DISPLAY_NAME}" /></p>
+        <p>Password: <input type="password" name="user[password]" /></p>
+        <p>Short text about you:</p>
+        <p><textarea name="user[text]" cols="30" rows="10">{BIO}</textarea></p>
+        <p>Display picture: <input type="file" id="display_picture" name="display_picture" /></p>
+        <p><input type="submit" value="Update profile" name="submit" /></p>
+
+    </form>
+</div>

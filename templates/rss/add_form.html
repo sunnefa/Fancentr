@@ -1,0 +1,15 @@
+<h1>{HEADING}</h1>
+<p>{MESSAGE}</p>
+
+<form action="" method="post">
+    <input type="hidden" name="module" value="rss" />
+    <input type="hidden" name="part" value="{PART}" />
+    <input type="hidden" name="feed_id" value="{FEED_ID}" />
+    
+    <p>Feed name: <input type="text" value="{FEED_NAME}" name="feed_name" /></p>
+    
+    {SITE_LIST}
+    
+    <p><input type="submit" name="submit" value="{BUTTON}" /></p>
+    
+</form>
